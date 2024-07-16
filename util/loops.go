@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main() {
+func loops() {
 	x := 0
 	// for can be for and while loop
 	for x < 5 { // while loop
