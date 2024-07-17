@@ -19,7 +19,7 @@ func getInitials(n string) (string, string) {
 	return initials[0], "_"
 }
 
-func main() {
+func multi_returns() {
 	fn, sn := getInitials("tifa lockhart")
 	fmt.Println(fn, sn)
 
