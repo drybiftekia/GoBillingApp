@@ -1,32 +1,31 @@
 package main
 
-import (
-	"fmt"
-	"strings"
-)
-
-func getInitials(n string) (string, string) {
-	s := strings.ToUpper(n)
-	names := strings.Split(s, " ")
-
-	var initials []string
-	for _, v := range names {
-		initials = append(initials, v[:1])
-	}
-	if len(initials) > 1 {
-		return initials[0], initials[1]
-	}
-	return initials[0], "_"
-}
+import "fmt"
 
 func main() {
-	fn, sn := getInitials("tifa lockhart")
-	fmt.Println(fn, sn)
+	menu := map[string]float64{
+		"soup":           4.99,
+		"pie":            7.99,
+		"salad":          6.99,
+		"toffee pudding": 3.55,
+	}
 
-	fn1, sn1 := getInitials("tifa")
-	fmt.Println(fn1, sn1)
+	fmt.Println(menu)
+	fmt.Println(menu["pie"])
 
-	fn2, sn2 := getInitials("tifa lockhart")
-	fmt.Println(fn2, sn2)
+	for k, v := range menu {
+		fmt.Println(k, "-", v)
+	}
 
+	phonebook := map[int]string{
+		262435923: "mario",
+		123931589: "luigi",
+		129192492: "peach",
+	}
+
+	fmt.Println(phonebook)
+	fmt.Println(phonebook[262435923])
+
+	phonebook[262435923] = "bowser"
+	fmt.Println(phonebook)
 }
