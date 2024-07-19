@@ -2,30 +2,21 @@ package main
 
 import "fmt"
 
+func updateName(x *string) {
+	*x = "wedge"
+}
+
 func main() {
-	menu := map[string]float64{
-		"soup":           4.99,
-		"pie":            7.99,
-		"salad":          6.99,
-		"toffee pudding": 3.55,
-	}
+	name := "tifa"
 
-	fmt.Println(menu)
-	fmt.Println(menu["pie"])
+	// updateName(name)
 
-	for k, v := range menu {
-		fmt.Println(k, "-", v)
-	}
+	fmt.Println("memory address of name is:", &name)
 
-	phonebook := map[int]string{
-		262435923: "mario",
-		123931589: "luigi",
-		129192492: "peach",
-	}
-
-	fmt.Println(phonebook)
-	fmt.Println(phonebook[262435923])
-
-	phonebook[262435923] = "bowser"
-	fmt.Println(phonebook)
+	m := &name
+	fmt.Println(m)
+	fmt.Println("value at memory address:", *m)
+	fmt.Println(name)
+	updateName(m)
+	fmt.Println(name)
 }
